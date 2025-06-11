@@ -1,0 +1,13 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Scripts/PG%20Plot%20Management/Scripts/Editor/new/PlotManagerUSS.uss?fileID=7433441132597879392&amp;guid=0740e80482aa7234ca667e44a66ff35a&amp;type=3#PlotManagerUSS" />
+    <ui:VisualElement name="Cell" class="Cell">
+        <ui:Button text="Button" name="SelectButton" style="flex-shrink: 0; flex-grow: 1; -unity-text-align: middle-left;" />
+        <ui:Button name="SortDownButton" style="padding-top: 1px; padding-right: 3px; padding-bottom: 1px; padding-left: 3px; align-items: center; justify-content: center;">
+            <ui:VisualElement name="VisualElement" picking-mode="Ignore" class="unity-base-popup-field__arrow" />
+        </ui:Button>
+        <ui:Button name="SortUpButton" style="padding-top: 1px; padding-right: 3px; padding-bottom: 1px; padding-left: 3px; align-items: center; justify-content: center; rotate: 180deg;">
+            <ui:VisualElement name="VisualElement" picking-mode="Ignore" class="unity-base-popup-field__arrow" />
+        </ui:Button>
+        <ui:Button text="X" name="RemoveButton" />
+    </ui:VisualElement>
+</ui:UXML>

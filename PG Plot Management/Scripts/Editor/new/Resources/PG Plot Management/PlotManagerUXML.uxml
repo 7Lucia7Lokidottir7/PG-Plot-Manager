@@ -1,0 +1,55 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Scripts/PG%20Plot%20Management/Scripts/Editor/new/PlotManagerUSS.uss?fileID=7433441132597879392&amp;guid=0740e80482aa7234ca667e44a66ff35a&amp;type=3#PlotManagerUSS" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu text="Asset" selectable="false" />
+        <ui:DropdownField label="Inspector Type" choices="Data,Objects,Languages" index="0" name="InspectorTypeDropdownField" />
+        <uie:ToolbarSpacer style="width: 115px;" />
+        <ui:Label text="Language" enable-rich-text="true" />
+        <SearchableDropdownField style="width: 200px;" />
+    </uie:Toolbar>
+    <PlotSplitView fixed-pane-initial-dimension="250">
+        <ui:VisualElement name="Chapters" style="flex-grow: 1;">
+            <ui:Label text="Chapters&#10;" class="Title" />
+            <ui:Button text="Add Chapter" name="AddButton" />
+            <ui:ScrollView style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <PlotSplitView fixed-pane-initial-dimension="250">
+                <ui:VisualElement name="States" style="flex-grow: 1;">
+                    <ui:Label text="States" name="Label" class="Title" />
+                    <ui:Button text="Add State" name="AddButton" />
+                    <ui:ScrollView style="flex-grow: 1;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Inspector" style="flex-grow: 1;">
+                    <ui:Label text="Data" class="Title" />
+                    <ui:ScrollView horizontal-scroller-visibility="Hidden" style="flex-grow: 1; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px;">
+                        <ui:Label text="Name State" />
+                        <ui:TextField placeholder-text="Name State" multiline="true" auto-correction="false" keyboard-type="Default" name="TextField" style="flex-direction: row; flex-grow: 0; flex-shrink: 1;" />
+                        <ui:Label text="Description" style="margin-top: 10px;" />
+                        <ui:TextField placeholder-text="Description" multiline="true" auto-correction="false" keyboard-type="Default" style="flex-direction: row; flex-grow: 0; flex-shrink: 1;" />
+                        <uie:ObjectField label="Start Cutscene" allow-scene-objects="false" type="UnityEngine.Playables.PlayableAsset, UnityEngine.CoreModule" name="StartCutscene" class="CutsceneField" style="flex-direction: column;" />
+                        <ui:Foldout text="Start Event" value="false" class="foldout-effect">
+                            <ui:Toggle label="Enable" name="EnableStartEvent" />
+                            <ui:Label text="Start Event Object" />
+                            <SearchableDropdownField name="StartEventObject" />
+                        </ui:Foldout>
+                        <ui:Foldout text="End Event" value="false" class="foldout-effect">
+                            <ui:Toggle label="Enable" name="EnableEndEvent" toggle-on-label-click="true" />
+                            <ui:Label text="End Event Object" />
+                            <SearchableDropdownField name="EndEventObject" />
+                        </ui:Foldout>
+                        <uie:ObjectField label="End Cutscene" allow-scene-objects="false" type="UnityEngine.Playables.PlayableAsset, UnityEngine.CoreModule" name="EndCutscene" class="CutsceneField" />
+                        <ui:Foldout text="Conditions" value="false" class="foldout-effect">
+                            <ui:Foldout text="Create" name="CreateConditionFoldout" class="CutsceneField" />
+                            <ui:IMGUIContainer name="ConditionsIMGUI" />
+                        </ui:Foldout>
+                        <ui:Foldout text="Behaviours" value="false" class="foldout-effect">
+                            <ui:Foldout text="Create" name="CreateBehaviourFoldout" />
+                            <ui:IMGUIContainer name="BehaviorsIMGUI" />
+                        </ui:Foldout>
+                    </ui:ScrollView>
+                </ui:VisualElement>
+            </PlotSplitView>
+        </ui:VisualElement>
+    </PlotSplitView>
+</ui:UXML>
